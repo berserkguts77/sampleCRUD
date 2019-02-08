@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.bonobono.web04.mapper.SampleMapper">
+	<select id="selectSampleList"
+			resultType="com.bonobono.web04.vo.Sample">
+		SELECT 
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM sample
+	</select>
+	
+	<select id="selectSampleOne"
+			resultType="com.bonobono.web04.vo.Sample">
+		SELECT 
+			sample_id as sampleId,
+			sample_name as sampleName
+		FROM sample
+	</select>
+	
+	<insert id="insertSample"
+			parameterType="com.bonobono.web04.vo.Sample">
+		INSERT INTO sample(
+			sample_name
+		) VALUES (
+			#{sampleName}
+		)
+			
+	</insert>
+	
+	<delete id="deleteSample"
+			parameterType="com.bonobono.web04.vo.Sample">
+		DELETE 
+			
+	</delete>
+	
+	<update id="updateSample"
+			parameterType="com.bonobono.web04.vo.Sample">
+			
+	</update>
+	
+</mapper>
