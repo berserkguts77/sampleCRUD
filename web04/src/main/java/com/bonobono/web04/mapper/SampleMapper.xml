@@ -11,9 +11,10 @@
 	<select id="selectSampleOne"
 			resultType="com.bonobono.web04.vo.Sample">
 		SELECT 
-			sample_id as sampleId,
 			sample_name as sampleName
 		FROM sample
+		WHERE
+			sample_id = #{sampleId}
 	</select>
 	
 	<insert id="insertSample"
@@ -28,13 +29,21 @@
 	
 	<delete id="deleteSample"
 			parameterType="com.bonobono.web04.vo.Sample">
-		DELETE 
+		DELETE
+		FROM sample
+		WHERE
+			sample_id = #{sampleId}
 			
 	</delete>
 	
 	<update id="updateSample"
 			parameterType="com.bonobono.web04.vo.Sample">
-			
+		UPDATE sample
+		SET 
+			sample_name = #{sampleName}
+		WHERE
+			sample_id = #{sampleId}
+		
 	</update>
 	
 </mapper>
