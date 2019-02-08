@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>회원가입</h1>
+		<form th:action="addSampleAction" method="post">
+	     	이름 : <input type="text" name="sampleName">
+	        <input type="submit" value="회원추가">
+	        <!-- <input type="button" value="회원추가"> 
+	        	처음에 입력이 포스트로 전달이 되지 않는 이유를 몰랐다.
+	        	button을 나중에 발견하여서 submit으로 변경하여 오류를 수정했다.-->
+		</form>
+	</body>
+</html>

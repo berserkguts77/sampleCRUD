@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bonobono.web04.mapper.SampleMapper">
+	<!-- 전체 검색 -->
 	<select id="selectSampleList"
 			resultType="com.bonobono.web04.vo.Sample">
 		SELECT 
@@ -8,6 +12,7 @@
 		FROM sample
 	</select>
 	
+	<!-- 하나 검색 -->
 	<select id="selectSampleOne"
 			resultType="com.bonobono.web04.vo.Sample">
 		SELECT 
@@ -17,6 +22,7 @@
 			sample_id = #{sampleId}
 	</select>
 	
+	<!-- 입력 -->
 	<insert id="insertSample"
 			parameterType="com.bonobono.web04.vo.Sample">
 		INSERT INTO sample(
@@ -27,6 +33,7 @@
 			
 	</insert>
 	
+	<!-- 삭제 -->
 	<delete id="deleteSample"
 			parameterType="com.bonobono.web04.vo.Sample">
 		DELETE
@@ -36,6 +43,7 @@
 			
 	</delete>
 	
+	<!-- 수정 -->
 	<update id="updateSample"
 			parameterType="com.bonobono.web04.vo.Sample">
 		UPDATE sample

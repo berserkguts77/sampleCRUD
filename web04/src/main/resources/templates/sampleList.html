@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+
+<body>
+	<table border=1>
+	    <tr>
+	        <td>아이디</td>
+	        <td>이름</td>
+	        <td>DELETE</td>
+	        <td>UPDATE</td>
+	    </tr>
+        <tr th:each="s : ${list}">
+            <td th:text="${ s.sampleId }"></td>
+            <td th:text="${ s.sampleName }"></td>
+            <td><a href="#">DELETE</a></td>
+            <td><a href="#">UPDATE</a></td>
+        </tr>
+	</table>
+</body>
+</html>

@@ -14,7 +14,9 @@ public class SampleService {
 	private SampleMapper sampleMapper;
 	
 	public List<Sample> getSampleList(){
-		return null;
+		// List<Sample> list = sampleMapper.selectSampleList();
+		// return List<Sample> list;
+		return sampleMapper.selectSampleList();
 	}
 	
 	public Sample getSampleOne(){
@@ -22,7 +24,9 @@ public class SampleService {
 	}
 	
 	public int addSample(Sample sample) {
-		return 0;
+		// int result = sampleMapper.insertSample(sample);
+		// return result; 이 방법도 좋지만 이게 더 세련되어보인다. 29기 코딩 참고
+		return sampleMapper.insertSample(sample);
 	}
 	
 	public int removeSample(Sample sample) {
