@@ -14,6 +14,10 @@ public interface SampleMapper {
 	// 2. 입력
 	int insertSample(Sample sample);
 	
+	// 3. 삭제
+	int deleteSample(int sampleId);
 	
+	// 4. 수정 폼
+	Sample selectSampleOne(int sampleId);
 	
 }

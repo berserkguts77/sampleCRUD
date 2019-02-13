@@ -13,8 +13,8 @@
         <tr th:each="s : ${list}">
             <td th:text="${ s.sampleId }"></td>
             <td th:text="${ s.sampleName }"></td>
-            <td><a href="#">DELETE</a></td>
-            <td><a href="#">UPDATE</a></td>
+            <td><a th:href="@{/removeSample(sampleId=${s.sampleId})}">DELETE</a></td>
+            <td><a th:href="@{/modifySample(sampleId=${s.sampleId})}">UPDATE</a></td>
         </tr>
 	</table>
 </body>

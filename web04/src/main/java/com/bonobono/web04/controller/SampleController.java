@@ -2,11 +2,14 @@ package com.bonobono.web04.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bonobono.web04.service.SampleService;
@@ -43,8 +46,34 @@ public class SampleController {
 		return "sampleList";
 	}
 	// 4. 삭제 액션
+	@RequestMapping("/removeSample")
+	public String removeSample(
+			@RequestParam(value="sampleId") int sampleId) {
+		System.out.println(sampleId + "<-sampleId get 입력 잘 되나?");
+		sampleService.removeSample(sampleId);
+		return "redirect:/sampleList";
+	}
+	
 	
 	// 5. 수정 폼
+	@RequestMapping("/modifySample")
+	public String modifySample(
+			Model model, @RequestParam(value="sampleId") int sampleId) {
+		System.out.println(sampleId + "<-sampleId get 입력 잘 되나?");
+		Sample sample = sampleService.getSampleOne(sampleId);
+		model.addAttribute("sample", sample);
+		return "/modifySample";
+	}
+	
 	
 	// 6. 수정 액션
+	@PostMapping("/modifySampleAction")
+	public String modifySample() {
+		
+		
+		
+		return "redirect:/sampleList";
+	}
+	
+	
 }

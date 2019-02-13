@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>회원수정</h1>
+		<form th:action="/modifySampleAction" method="post">
+	     	아이디: <input type="text" name="sampleId" value="${sample.sampleId}"readonly="readonly">
+	     	이름 : <input type="text" name="sampleName" value="${sample.sampleName}">
+	        <input type="submit" value="회원수정">
+	        
+		</form>
+	</body>
+</html>

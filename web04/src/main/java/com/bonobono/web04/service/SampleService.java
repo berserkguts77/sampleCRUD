@@ -19,8 +19,8 @@ public class SampleService {
 		return sampleMapper.selectSampleList();
 	}
 	
-	public Sample getSampleOne(){
-		return null;
+	public Sample getSampleOne(int sampleId){
+		return sampleMapper.selectSampleOne(sampleId);
 	}
 	
 	public int addSample(Sample sample) {
@@ -29,8 +29,9 @@ public class SampleService {
 		return sampleMapper.insertSample(sample);
 	}
 	
-	public int removeSample(Sample sample) {
-		return 0;
+	public int removeSample(int sampleId) {
+		
+		return sampleMapper.deleteSample(sampleId);
 	}
 	
 	public int modifySample(Sample sample) {
