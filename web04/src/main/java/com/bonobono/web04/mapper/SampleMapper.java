@@ -18,6 +18,8 @@ public interface SampleMapper {
 	int deleteSample(int sampleId);
 	
 	// 4. 수정 폼
-	Sample selectSampleOne(int sampleId);
+	List<Sample> selectSampleOne(int sampleId);
 	
+	// 5. 수정 액션!
+	int updateSample(Sample sample);
 }

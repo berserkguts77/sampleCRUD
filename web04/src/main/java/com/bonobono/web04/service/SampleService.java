@@ -19,7 +19,7 @@ public class SampleService {
 		return sampleMapper.selectSampleList();
 	}
 	
-	public Sample getSampleOne(int sampleId){
+	public List<Sample> getSampleOne(int sampleId){
 		return sampleMapper.selectSampleOne(sampleId);
 	} 
 	
@@ -34,8 +34,12 @@ public class SampleService {
 		return sampleMapper.deleteSample(sampleId);
 	}
 	
-	public int modifySample(Sample sample) {
-		return 0;
-	}
 	
+	
+
+
+	public int modifySample(Sample sample) {
+		// TODO Auto-generated method stub
+		return sampleMapper.updateSample(sample);
+	}
 }

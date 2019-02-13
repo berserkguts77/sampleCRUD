@@ -16,7 +16,8 @@
 	<select id="selectSampleOne"
 			resultType="com.bonobono.web04.vo.Sample">
 		SELECT 
-			sample_name as sampleName
+			sample_name as sampleName,
+			sample_id as sampleId
 		FROM sample
 		WHERE
 			sample_id = #{sampleId}

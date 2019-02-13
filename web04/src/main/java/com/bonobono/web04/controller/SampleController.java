@@ -2,14 +2,13 @@ package com.bonobono.web04.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bonobono.web04.service.SampleService;
@@ -60,18 +59,18 @@ public class SampleController {
 	public String modifySample(
 			Model model, @RequestParam(value="sampleId") int sampleId) {
 		System.out.println(sampleId + "<-sampleId get 입력 잘 되나?");
-		Sample sample = sampleService.getSampleOne(sampleId);
-		model.addAttribute("sample", sample);
-		return "/modifySample";
+		List<Sample> list = sampleService.getSampleOne(sampleId);
+		model.addAttribute("list", list);// 정보를 옮기기 위해서 모델 사용
+		return "modifySample";
 	} 
 	
 	
 	// 6. 수정 액션
-	@PostMapping("/modifySampleAction")
-	public String modifySample() {
-		
-		
-		
+	@RequestMapping(value="/modifySampleAction", method=RequestMethod.POST)
+	// 포스트방식 정보를 받는 방법을 이유림학생의 코딩을 참고하였습니다.
+	public String modifySample(Sample sample) {
+		System.out.println(sample + "<-sample post 입력 잘 되나?");
+		sampleService.modifySample(sample);
 		return "redirect:/sampleList";
 	}
 	
