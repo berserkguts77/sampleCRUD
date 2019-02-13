@@ -21,7 +21,7 @@ public class SampleService {
 	
 	public Sample getSampleOne(int sampleId){
 		return sampleMapper.selectSampleOne(sampleId);
-	}
+	} 
 	
 	public int addSample(Sample sample) {
 		// int result = sampleMapper.insertSample(sample);

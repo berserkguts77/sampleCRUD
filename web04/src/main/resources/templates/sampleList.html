@@ -10,7 +10,7 @@
 	        <td>DELETE</td>
 	        <td>UPDATE</td>
 	    </tr>
-        <tr th:each="s : ${list}">
+        <tr th:each="s : ${list}"> 
             <td th:text="${ s.sampleId }"></td>
             <td th:text="${ s.sampleName }"></td>
             <td><a th:href="@{/removeSample(sampleId=${s.sampleId})}">DELETE</a></td>

@@ -11,7 +11,7 @@ public interface SampleMapper {
 	// 1. 전체 목록 검색
 	List<Sample> selectSampleList();
 	
-	// 2. 입력
+	// 2. 입력 
 	int insertSample(Sample sample);
 	
 	// 3. 삭제

@@ -63,7 +63,7 @@ public class SampleController {
 		Sample sample = sampleService.getSampleOne(sampleId);
 		model.addAttribute("sample", sample);
 		return "/modifySample";
-	}
+	} 
 	
 	
 	// 6. 수정 액션
